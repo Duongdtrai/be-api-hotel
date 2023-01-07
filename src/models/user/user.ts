@@ -1,4 +1,4 @@
-import { Schema, model, connect } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 interface IUser {
     email: string;
@@ -19,7 +19,7 @@ const userSchema = new Schema<IUser>({
     address: { type: String, required: true },
 }, {
     timestamps: true,
-    collection: 'users'
+    collection: 'users',
 });
 
 const UserModel = model<IUser>('users', userSchema);

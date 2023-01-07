@@ -1,9 +1,9 @@
-import { Router } from 'express'
-import RoomController from '../../controllers/admin/Room'
-import * as passport from 'passport'
-import '../../middlewares/passport'
-import checkIsInRole from '../../middlewares/role'
-import { CONFIG } from '../../configs/configs'
+import { Router } from 'express';
+import * as passport from 'passport';
+import RoomController from '../../controllers/admin/Room';
+import '../../middlewares/passport';
+import checkIsInRole from '../../middlewares/role';
+import { CONFIG } from '../../configs/configs';
 
 const router = Router();
 /**
@@ -124,7 +124,6 @@ router.get('/:roomId', passport.authenticate('jwt', { session: false }), checkIs
  *      - Bearer: []
  */
 router.post('/create', passport.authenticate('jwt', { session: false }), checkIsInRole(CONFIG.role.ADMIN), RoomController.createRoom);
-
 
 /**
  * @openapi

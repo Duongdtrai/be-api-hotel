@@ -1,5 +1,5 @@
-import { Router } from 'express'
-import AccountController from '../controllers/Account'
+import { Router } from 'express';
+import AccountController from '../controllers/Account';
 const router = Router();
 /**
  * @openapi
@@ -133,7 +133,6 @@ router.post('/forgot-password', AccountController.forgotPassword);
  *      - Bearer: []
  */
 router.patch('/change-password', AccountController.changePassword);
-
 
 /**
  * @openapi

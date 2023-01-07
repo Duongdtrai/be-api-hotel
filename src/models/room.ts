@@ -1,5 +1,5 @@
 
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
 interface IRoom {
     avatar: Array<string>
@@ -23,7 +23,7 @@ const roomSchema = new Schema<IRoom>({
     service: [String],
 }, {
     timestamps: true,
-    collection: 'room'
+    collection: 'room',
 });
 
 const RoomModel = model<IRoom>('room', roomSchema);

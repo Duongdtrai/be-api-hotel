@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 interface IRentRoom {
     roomId: string
     userId: string,
@@ -16,10 +16,8 @@ const rentRoomSchema = new Schema<IRentRoom>({
     endDate: { type: String, required: true },
 }, {
     timestamps: true,
-    collection: 'rent-room'
+    collection: 'rent-room',
 });
 
 const RentRoomModel = model<IRentRoom>('rent-room', rentRoomSchema);
 export default RentRoomModel;
-
-

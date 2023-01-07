@@ -1,11 +1,10 @@
-import { Router } from 'express'
-import UserController from '../../controllers/user/User'
-import * as passport from 'passport'
-import '../../middlewares/passport'
-import checkIsInRole from '../../middlewares/role'
-import { CONFIG } from '../../configs/configs'
+import { Router } from 'express';
+import * as passport from 'passport';
+import UserController from '../../controllers/user/User';
+import '../../middlewares/passport';
+import checkIsInRole from '../../middlewares/role';
+import { CONFIG } from '../../configs/configs';
 const router = Router();
-
 
 /**
  * @openapi

@@ -15,11 +15,11 @@ const swaggerDefinition = {
 
         {
             name: '[LOGIN]: account',
-            description: "Đăng nhập"
+            description: 'Đăng nhập',
         },
         {
             name: '[ADMIN]: room',
-            description: 'Thông tin room admin'
+            description: 'Thông tin room admin',
         },
         {
             name: '[ADMIN]: List user',
@@ -31,12 +31,12 @@ const swaggerDefinition = {
         },
         {
             name: '[USER]: room',
-            description: 'Thông tin room user'
+            description: 'Thông tin room user',
         },
         {
             name: '[USER]: Rent-Room',
-            description: 'Thuê phòng'
-        }
+            description: 'Thuê phòng',
+        },
     ],
     securityDefinitions: {
         Bearer: {

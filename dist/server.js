@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
+const swaggerUi = require("swagger-ui-express");
+const passport = require("passport");
+const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const doc_1 = require("./swagger/doc");
+const routes_1 = require("./routes");
+const database_1 = require("./configs/database");
+const app = express();
+const port = process.env.PORT || 3000;
+dotenv.config();
+app.use(cors());
+app.options('*', cors());
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(passport.initialize());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+(0, database_1.default)();
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(doc_1.default));
+app.use('/api', routes_1.default);
+app.listen(port, () => {
+    console.log(`App is running http://localhost:${port}/api-docs`);
+});
+//# sourceMappingURL=server.js.map

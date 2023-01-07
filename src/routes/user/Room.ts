@@ -1,9 +1,9 @@
-import { Router } from 'express'
-import RoomUserController from '../../controllers/user/Room'
-import * as passport from 'passport'
-import '../../middlewares/passport'
-import checkIsInRole from '../../middlewares/role'
-import { CONFIG } from '../../configs/configs'
+import { Router } from 'express';
+import * as passport from 'passport';
+import RoomUserController from '../../controllers/user/Room';
+import '../../middlewares/passport';
+import checkIsInRole from '../../middlewares/role';
+import { CONFIG } from '../../configs/configs';
 const router = Router();
 /**
  * @openapi

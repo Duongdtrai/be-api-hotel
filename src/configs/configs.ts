@@ -1,10 +1,10 @@
 export const CONFIG = {
     role: {
         ADMIN: 'admin',
-        USER: 'user'
+        USER: 'user',
     },
     mail: {
-        MAILER: process.env.MAIL_MAILER, 
+        MAILER: process.env.MAIL_MAILER,
         HOST: process.env.MAIL_HOST,
         PORT: process.env.MAIL_PORT,
         USERNAME: process.env.MAIL_USERNAME,
@@ -15,5 +15,5 @@ export const CONFIG = {
     },
     URL: {
         APP_URL: process.env.APP_URL,
-    }
-} 
+    },
+};

@@ -1,9 +1,9 @@
-import { Router } from 'express'
-import RentRoomUserController from '../../controllers/user/RentRoom'
-import * as passport from 'passport'
-import '../../middlewares/passport'
-import checkIsInRole from '../../middlewares/role'
-import { CONFIG } from '../../configs/configs'
+import { Router } from 'express';
+import * as passport from 'passport';
+import RentRoomUserController from '../../controllers/user/RentRoom';
+import '../../middlewares/passport';
+import checkIsInRole from '../../middlewares/role';
+import { CONFIG } from '../../configs/configs';
 const router = Router();
 /**
  * @openapi
@@ -66,7 +66,7 @@ router.get('/', passport.authenticate('jwt', { session: false }), checkIsInRole(
  *     security:
  *      - Bearer: []
  */
-router.post('/order', passport.authenticate('jwt', { session: false }), checkIsInRole(CONFIG.role.USER),RentRoomUserController.orderRentRoom);
+router.post('/order', passport.authenticate('jwt', { session: false }), checkIsInRole(CONFIG.role.USER), RentRoomUserController.orderRentRoom);
 
 /**
  * @openapi
@@ -105,7 +105,7 @@ router.post('/order', passport.authenticate('jwt', { session: false }), checkIsI
  *     security:
  *      - Bearer: []
  */
-router.patch('/:rentRoomId', passport.authenticate('jwt', { session: false }), checkIsInRole(CONFIG.role.USER),RentRoomUserController.changeRentRoom);
+router.patch('/:rentRoomId', passport.authenticate('jwt', { session: false }), checkIsInRole(CONFIG.role.USER), RentRoomUserController.changeRentRoom);
 
 /**
  * @openapi
@@ -126,6 +126,6 @@ router.patch('/:rentRoomId', passport.authenticate('jwt', { session: false }), c
  *     security:
  *      - Bearer: []
  */
-router.patch('/:rentRoomId', passport.authenticate('jwt', { session: false }), checkIsInRole(CONFIG.role.USER),RentRoomUserController.removeRentRoom);
+router.patch('/:rentRoomId', passport.authenticate('jwt', { session: false }), checkIsInRole(CONFIG.role.USER), RentRoomUserController.removeRentRoom);
 export default router;
 // /, passport.authenticate('jwt', { session: false })

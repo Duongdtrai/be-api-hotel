@@ -1,4 +1,4 @@
-import { Schema, model, connect } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 interface IAccount {
     password: string;
@@ -13,10 +13,10 @@ const accountSchema = new Schema<IAccount>({
     email: { type: String, required: true },
     password: { type: String, required: true },
     role: { type: String, required: true },
-    resetPasswordToken: { type: String }
+    resetPasswordToken: { type: String },
 }, {
     timestamps: true,
-    collection: 'accounts'
+    collection: 'accounts',
 });
 
 const UserModel = model<IAccount>('accounts', accountSchema);
