@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "target": "ES6",
+        "module": "commonjs",
+        "outDir": "js",
+        "watch": true,
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+    },
+    "include": [
+        "./src/**/*",
+        "src/configs/.ts",
+    ],
+}

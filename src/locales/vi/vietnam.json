@@ -1,0 +1,7 @@
+{
+    "success": "Thành công",
+    "error": "Lỗi 404 không tìm thấy",
+    "errorServer": "Lỗi Server",
+    "validatorEmail": "Email của bạn bị trùng, vui lòng chọn email khác",
+    "validatorPassword": "Mật khẩu của bạn không đúng, vui lòng nhập lại mật khẩu"
+}
